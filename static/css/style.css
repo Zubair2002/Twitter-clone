@@ -92,7 +92,7 @@ body {
   margin-left: 14%;
 }
 .btn2 {
-  width: 5% !important;
+  width: 10%;
   background-color: rgb(145, 162, 173);
   color: white;
   font-size: 15px;
@@ -112,9 +112,31 @@ posts
   padding: 0;
   padding: 17px;
 }
+#image {
+  width: 350px;
+  height: 350px;
+}
 @media screen and (max-width: 500px) {
   .posts li .name_body .name {
-    font-size: 40px;
+    font-size: 20px;
+  }
+  #image {
+    width: 210px;
+    height: 210px;
+  }
+  .btn {
+    margin-left: 7%;
+    font-size: 13px;
+  }
+  .btn1 {
+    margin-left: 27%;
+    font-size: 11px;
+  }
+  .btn2 {
+    font-size: 11px;
+    width: 10%;
+    margin-top: 1%;
+    margin-left: 2%;
   }
 }
 /*
