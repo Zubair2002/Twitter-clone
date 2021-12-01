@@ -1,0 +1,49 @@
+{% extends "base.html" %}{% block content %} {% load static %}
+<section class="content">
+  <div class="header">
+    <img src="/static//img/twitter.png" class="logo" />
+    <a href="">Edit</a>
+  </div>
+  <section class="post_form">
+    <form
+      action="/edit/{{posts.id}}/"
+      method="POST"
+      enctype="multipart/form-data"
+    >
+      {% csrf_token %}
+      <input
+        type="text"
+        name="name"
+        placeholder="Name"
+        value="{{posts.name}}"
+        required
+      /><br />
+      <textarea name="body" placeholder="{{posts.body}}"></textarea>
+      <br />
+
+      {% if posts.image.url %}
+      <img
+        class="Image"
+        src="{{posts.image.url}}"
+        style="width: 370px; height: 370px"
+      />
+      {% endif %}
+      <br />
+      <br />
+      <div></div>
+      <div class="tweet">
+        <input class="uploadfile" type="file" name="image" />
+        <a href="{% url 'index' %}" class="btn2" type="submit">Cancel</a>
+        <input class="btn1" type="submit" value="Update" />
+      </div>
+    </form>
+  </section>
+
+  <script
+    src="https://code.jquery.com/jquery-3.6.0.js"
+    integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+    crossorigin="anonymous"
+  ></script>
+  <script src="{% static 'js/posts.js' %}"></script>
+</section>
+{% endblock %}
